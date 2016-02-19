@@ -5,9 +5,7 @@
 ##Below are two functions.  These functions are used to invert a matrix and cache the result.
 
 makeCacheMatrix <- function(x = matrix()) {
-
-makeCacheMatrix <- function(x = matrix()) {
-		inv <- NULL
+	inv <- NULL
         set <- function(y) {
                 x <<- y
                 inv <<- NULL
@@ -37,3 +35,5 @@ cacheSolve <- function(x, ...) {
         x$setInverse(inv)
         inv
 }
+
+
