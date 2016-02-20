@@ -1,8 +1,10 @@
-## The following functions are to accomplish the inversing of a Matrix.
-## Cashing an inverted matrix is useful when you want to use that inverted matrix repeatedly.
+## The following functions are to accomplish the inversing of a Matrix and caching the result.
+## Caching an inverted matrix is useful when you want to use that inverted matrix repeatedly.
 ## Since it is a costly operation, you don't want to invert it every time you need to use it - provided the matrix does not change.
 
 ##Below are two functions.  These functions are used to invert a matrix and cache the result.
+
+## This function caches the inverted matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
 	inv <- NULL
@@ -25,13 +27,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-		inv <- x$getInverse()
+        inv <- x$getInverse()
         if (!is.null(inv)) {
                 message("getting cached data")
                 return(inv)
         }
-        mat <- x$get()
-        inv <- solve(mat, ...)
+        matx <- x$get()
+        inv <- solve(matx, ...)
         x$setInverse(inv)
         inv
 }
